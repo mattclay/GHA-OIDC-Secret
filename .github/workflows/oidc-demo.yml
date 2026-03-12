@@ -16,7 +16,11 @@ jobs:
         uses: actions/checkout@v6
 
       - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
+        id: artifact-upload-step
         with:
           name: my-artifact
           path: README.md
+
+      - name: Output artifact ID
+        run:  echo 'Artifact ID is ${{ steps.artifact-upload-step.outputs.artifact-id }}'
