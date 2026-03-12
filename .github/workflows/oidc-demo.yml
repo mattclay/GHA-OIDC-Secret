@@ -23,4 +23,10 @@ jobs:
           path: README.md
 
       - name: Output artifact ID
-        run:  echo 'Artifact ID is ${{ steps.artifact-upload-step.outputs.artifact-id }}'
+        run: echo 'Artifact ID is ${{ steps.artifact-upload-step.outputs.artifact-id }}'
+
+      - name: Pause
+        run: sleep 100
+
+      - name: All done
+        run: echo hi
